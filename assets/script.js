@@ -1,4 +1,3 @@
-// Assignment code here
 function generatePassword() {
   // variables for criteria defined
   var passwordLength = prompt("Please select password length (must be at least 8 characters and no more than 128).");
@@ -7,7 +6,7 @@ function generatePassword() {
   var passwordNumeric = window.confirm("Include Numbers in your password? (OK for Yes, Cancel for No)");
   var passwordSpecial = window.confirm("Include Special characters in your password? (OK for Yes, Cancel for No)");
 
-  // Validation
+  // Validation for Code
   if (passwordLowercase === false && passwordUppercase === false && passwordNumeric === false && passwordSpecial === false){
     window.alert("You must select at least 1 criteria to generate a password.");
     return generatePassword();
@@ -18,7 +17,7 @@ function generatePassword() {
     return generatePassword();
   }
 
-  // all possible characters for criteria 
+  // possible characters for password
   var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
   var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var numberCharacters = "0123456789";
@@ -27,7 +26,7 @@ function generatePassword() {
   // character string of selected password criteria
   var characterOption = "";
 
-  // characterOption builder section
+  // characterOption builder Section
   if (passwordLowercase === true) {
     characterOption = characterOption + lowercaseLetters
   }
@@ -41,7 +40,7 @@ function generatePassword() {
     characterOption = characterOption + specialCharacters
   }
 
-  // final password container
+  // password container
   var password = "";
 
   // loop indexing of characterOptions by length of password as integer
